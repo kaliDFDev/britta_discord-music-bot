@@ -4,6 +4,7 @@ const {
   YOUTUBE_API,
   SPOTIFY_CLIENT_ID,
   SPOTIFY_CLIENT_SECRET,
+  SPOTIFY_REDIRECT_URI,
 } = require("../config/config.json");
 const ytdl = require("ytdl-core");
 
@@ -12,6 +13,7 @@ var SpotifyWebApi = require("spotify-web-api-node");
 var spotifyApi = new SpotifyWebApi({
   clientId: SPOTIFY_CLIENT_ID,
   clientSecret: SPOTIFY_CLIENT_SECRET,
+  redirectUri: SPOTIFY_REDIRECT_URI,
 });
 
 // Spotify Token
