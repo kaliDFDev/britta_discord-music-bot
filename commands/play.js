@@ -4,8 +4,6 @@ const {
   YOUTUBE_API,
   SPOTIFY_CLIENT_ID,
   SPOTIFY_CLIENT_SECRET,
-  SPOTIFY_ACCESS_TOKEN,
-  SPOTIFY_REDIRECT_URI,
 } = require("../config/config.json");
 const ytdl = require("ytdl-core");
 
@@ -14,14 +12,13 @@ var SpotifyWebApi = require("spotify-web-api-node");
 var spotifyApi = new SpotifyWebApi({
   clientId: SPOTIFY_CLIENT_ID,
   clientSecret: SPOTIFY_CLIENT_SECRET,
-  redirectUri: SPOTIFY_REDIRECT_URI,
 });
 
 // Spotify Token
 //test song: https://open.spotify.com/track/5hdOAZuYJWsAGOxBKUHpvu?si=KHSPjTTqS2mOcVWx2-zKkw
 //same song but url from browser: https://open.spotify.com/track/5hdOAZuYJWsAGOxBKUHpvu
 
-spotifyApi.setAccessToken(SPOTIFY_ACCESS_TOKEN);
+// spotifyApi.setAccessToken(SPOTIFY_ACCESS_TOKEN);
 
 //const sAPI = new _spotifyWebApiNode.default({
 //  clientId: process.env.SPOTIFY_CLIENT_ID,
