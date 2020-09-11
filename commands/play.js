@@ -799,11 +799,11 @@ module.exports = {
           timestamp: new Date(),
           footer: {
             text: "© Britta",
-          },
-        },
+          }
+        }
       });
     // if (message.client.queue.songs.length > 0) {
     //   play(queue, voiceChannel, message, dispatcher);
     // }
-  },
+  }
 };
