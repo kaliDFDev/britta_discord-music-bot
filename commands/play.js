@@ -805,5 +805,5 @@ module.exports = {
     // if (message.client.queue.songs.length > 0) {
     //   play(queue, voiceChannel, message, dispatcher);
     // }
-  }
+  },
 };
