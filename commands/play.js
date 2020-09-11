@@ -27,10 +27,13 @@ var spotifyApi = new SpotifyWebApi({
 //   clientSecret: process.env.SPOTIFY_CLIENT_SECRET
  //  });
 
+var token = 0;
+
 const getToken = () => {
   spotifyApi.clientCredentialsGrant().then(data => {
       console.log('The access token expires in ' + data.body['expires_in']);
           (0, _logger.logDebug)(data.body['access_token']);
+token = data.body['access_token'];
               spotifyApi.setAccessToken(data.body['access_token']);
                   setTimeout(() => getToken(), (data.body['expires_in'] - 20) * 1000);
                     }, err => {
@@ -39,6 +42,8 @@ const getToken = () => {
                               });
                               };
 getToken();
+
+spotifyApi.setAccessToken(token);
 
 var ytSearch = require("youtube-search");
 const { lastIndexOf } = require("ffmpeg-static");
