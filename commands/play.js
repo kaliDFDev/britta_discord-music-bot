@@ -788,7 +788,20 @@ module.exports = {
         });
       }
     }
-
+    if (!serverQueue) {
+      message.member.voice.channel.leave();
+      message.channel.send({
+        embed: {
+          color: message.client.messageEmbedData.color,
+          author: {
+            name: "⭕ Bye, i left your voice channel",
+          },
+          timestamp: new Date(),
+          footer: {
+            text: "© Britta",
+          },
+        },
+      });
     // if (message.client.queue.songs.length > 0) {
     //   play(queue, voiceChannel, message, dispatcher);
     // }
